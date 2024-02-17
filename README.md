@@ -1,4 +1,4 @@
-# Pizza Hub
+# 🍕 Pizza Hub
 
 ## Bem-vindo ao Pizza Hub
 
@@ -25,8 +25,6 @@ Pizza Hub é uma aplicação web desenvolvida utilizando Next.js, TailwindCSS e 
 - **TailwindCSS**: Uma biblioteca de estilos utilitários para design flexível e semântico.
 - **Next UI**: Uma biblioteca de componentes para Next.js, oferecendo componentes prontos e estilizados.
 
-```bash
 ## Autor
 
 Desenvolvido por [Srcyax](https://github.com/Srcyax).
-```
