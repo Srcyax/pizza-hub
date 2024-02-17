@@ -37,6 +37,7 @@ export default function Orders() {
                (orders.map((order, index) => (
                     <div key={index}>
                         <OrderCard
+                            key={index}
                             title={order.name}
                             orders={orders}
                             index={index}
