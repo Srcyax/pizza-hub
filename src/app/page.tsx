@@ -1,9 +1,8 @@
 "use client"
 import React from "react";
-import { toast } from "sonner"
+import { Instagram, Facebook, Twitter  } from 'lucide-react'
 import { useTheme } from "next-themes"
 import { useEffect } from "react";
-import axios from "axios";
 
 export default function Home() {
   const { setTheme } = useTheme()
@@ -13,26 +12,18 @@ export default function Home() {
   })
 
   return (
-    <main className="flex flex-col items-center justify-between">
-      <div className="grid grid-cols-2 grid-rows-none place-content-center gap-10 m-10">
-        <div className="border-2 rounded-lg flex flex-col justify-center items-center">
-          <img className="m-5" src="images/place_holder.png" width={150} alt="" />
-          <h1>Pizza - Calabresa</h1>
-          <button onClick={() => {
-              axios.post("/api/orders", {
-                name: "Calabresa"
-              }).then(res => {
-                toast("Olá [Nome do Cliente]", {
-                  description: "Seu pedido foi confirmado! Estamos trabalhando para prepará-lo e estamos prevendo uma entrega em apenas 40 minutos.",
-                  action: {
-                    label: "Undo",
-                    onClick: () => console.log("Undo"),
-                  },
-                  duration: 3000
-                })
-              })
-          }} className="border-2 rounded-lg p-3 m-5 hover:text-orange-500 transition-all duration-200">Pedir</button>
+    <main className="flex flex-col items-center justify-center">
+      <div className="flex flex-row items-center justify-center m-5">
+        <div className="flex flex-col items-center justify-center mb-60">
+          <h1 className="text-4xl text-center mx-5">A melhor <strong className="text-orange-500">Pizzaria</strong> da região</h1>
+          <p className="text-center text-zinc-400">Na nossa pizzaria, saboreie a excelência em cada fatia. <br/> Experimente hoje e descubra por que somos os favoritos da cidade!</p>
+          <div className="grid grid-cols-3 gap-3 m-5">
+            <a href="" target="_blank"><Instagram className="hover:text-orange-500 transition-colors"/></a>
+            <a href="" target="_blanck"><Facebook className="hover:text-orange-500 transition-colors"/></a>
+            <a href="" target="_black"><Twitter className="hover:text-orange-500 transition-colors"/></a>
+          </div>
         </div>
+          <img className="" src="images/pizza.png" alt="pizza_image" width={700} />
       </div>
     </main>
   );
