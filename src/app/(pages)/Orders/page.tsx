@@ -33,7 +33,7 @@ export default function Orders() {
 
     return (
     <main className="flex flex-col items-center justify-between">
-        <h1>Orders:</h1>
+        <h1>Pedidos:</h1>
         {
             ordersIsLoaded ? <div className="grid grid-cols-4 grid-rows-none place-content-center gap-10 m-10">
             {
