@@ -1,21 +1,21 @@
 interface Order {
     user: string;
     address: string;
-    pizzaName: string;
+    name: string;
     pizzaImg: string;
 }
 
 interface OrderCardProps {
     user: string;
     address: string;
-    pizzaName: string;
+    name: string;
     img: string;
     orders: Order[];
     index: number;
     onOrderComplete: (index: number, order: Order) => void;
 }
 
-export default function OrderCard({ user, address, pizzaName, img, orders, index, onOrderComplete }: OrderCardProps){
+export default function OrderCard({ user, address, name, img, orders, index, onOrderComplete }: OrderCardProps){
     const handleCompleteOrder = () => {
         const order = orders[index];
         onOrderComplete(index, order);
@@ -24,7 +24,7 @@ export default function OrderCard({ user, address, pizzaName, img, orders, index
         <div>
             <div className="border-2 rounded-lg flex flex-col justify-center items-center">
                 <img className="m-5 rounded-xl h-36" src={"images/" + img} width={200} alt="" />
-                <h1>{pizzaName}</h1>
+                <h1>{name}</h1>
                 <div className="flex flex-col gap-4 m-5 w-52">
                     <p className="text-center text-zinc-400">{"Cliente: " + user}</p>
                     <p className="text-center text-zinc-400">{"Endereço: " + address}</p>

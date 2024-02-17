@@ -1,8 +1,9 @@
 "use client"
 import React from "react";
-import { Instagram, Facebook, Twitter  } from 'lucide-react'
+import { Instagram, Facebook, Twitter, ArrowRight   } from 'lucide-react'
 import { useTheme } from "next-themes"
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const { setTheme } = useTheme()
@@ -21,6 +22,9 @@ export default function Home() {
             <a href="" target="_blank"><Instagram className="hover:text-orange-500 transition-colors"/></a>
             <a href="" target="_blanck"><Facebook className="hover:text-orange-500 transition-colors"/></a>
             <a href="" target="_black"><Twitter className="hover:text-orange-500 transition-colors"/></a>
+          </div>
+          <div className="mt-10">
+            <Link href="/Pizzas" className="flex flex-row gap-2 hover:gap-5 px-10 py-4 border-2 border-orange-500 hover:bg-orange-500 transition-all duration-500 rounded-xl">Saborear <ArrowRight /></Link>
           </div>
         </div>
           <img className="" src="images/pizza.png" alt="pizza_image" width={700} />

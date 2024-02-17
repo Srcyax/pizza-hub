@@ -15,7 +15,7 @@ export default function Pizzas(){
                 />
                 <PizzaCardInfo user="Gabriel" 
                 address="Rua benedito sales" 
-                pizzaImg="place_holder.png" 
+                pizzaImg="bacon.png" 
                 pizzaName="Bacon" 
                 pizzaDesc="Experimente nossa pizza de calabresa: uma combinação irresistível 
                 de queijo derretido, molho de tomate caseiro e calabresa defumada, 
