@@ -35,9 +35,8 @@ export default function Orders() {
             ordersIsLoaded ? <div className="grid grid-cols-4 grid-rows-none place-content-center gap-10 m-10">
             {
                (orders.map((order, index) => (
-                    <div>
+                    <div key={index}>
                         <OrderCard
-                            key={index}
                             title={order.name}
                             orders={orders}
                             index={index}
