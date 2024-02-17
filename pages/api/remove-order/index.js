@@ -5,8 +5,8 @@ export default function handler(req, res) {
 
     switch (method) {
         case "POST":
-            const { order } = req.body;
-            const index = orders.findIndex(item => item.name === order.name);
+            const { name } = req.body;
+            const index = orders.findIndex(order => order.pizzaName === name);
 
             if (index !== -1) {
                 orders.splice(index, 1);

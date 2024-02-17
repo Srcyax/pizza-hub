@@ -15,12 +15,14 @@ interface CardInfo {
 export default function PizzaCardInfo({user, address, pizzaImg, pizzaName, pizzaDesc} : CardInfo){
     return (  
         <div className="border-2 rounded-lg flex flex-col justify-center items-center">
-          <img className="m-5" src={"images/" + pizzaImg} width={150} alt="" />
+          <img className="m-5 rounded-xl h-36" src={"images/" + pizzaImg} width={200} alt="" />
           <h1 className="text-2xl">{pizzaName}</h1>
           <p className="text-center text-zinc-400 m-5">{pizzaDesc}</p>
           <button onClick={() => {
               axios.post("/api/orders", {
-                name: "Calabresa"
+                name: pizzaName,
+                desc: pizzaDesc,
+                pizzaImg: pizzaImg
               })
               .then(res => {
                 toast("Olá " + user, {

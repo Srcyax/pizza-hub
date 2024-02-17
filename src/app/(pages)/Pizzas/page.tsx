@@ -7,16 +7,16 @@ export default function Pizzas(){
             <div className="grid grid-cols-4 grid-rows-none place-content-center gap-10 m-10">
                 <PizzaCardInfo user="Luiz" 
                 address="Av elson soares" 
-                pizzaImg="place_holder.png" 
+                pizzaImg="calabresa.png" 
                 pizzaName="Calabresa" 
                 pizzaDesc="Experimente nossa pizza de calabresa: uma combinação irresistível 
                 de queijo derretido, molho de tomate caseiro e calabresa defumada, 
                 perfeita para satisfazer seus desejos de pizza clássica e saborosa"
                 />
-                <PizzaCardInfo user="Luiz" 
-                address="Av elson soares" 
+                <PizzaCardInfo user="Gabriel" 
+                address="Rua benedito sales" 
                 pizzaImg="place_holder.png" 
-                pizzaName="Calabresa" 
+                pizzaName="Bacon" 
                 pizzaDesc="Experimente nossa pizza de calabresa: uma combinação irresistível 
                 de queijo derretido, molho de tomate caseiro e calabresa defumada, 
                 perfeita para satisfazer seus desejos de pizza clássica e saborosa"
