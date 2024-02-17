@@ -16,10 +16,10 @@ export default function OrderCard({ title, orders, index, onOrderComplete }: Ord
     };
     return (
         <div>
-            <div className="bg-zinc-900 w-72 flex flex-col justify-center items-center">
+            <div className="border-2 rounded-lg flex flex-col justify-center items-center">
                 <img className="m-5" src="images/place_holder.png" width={150} alt="" />
                 <h1>{title}</h1>
-                <button onClick={handleCompleteOrder} className="bg-zinc-800 rounded-lg p-3 m-5">Concluir</button>
+                <button onClick={handleCompleteOrder} className="border-2 rounded-lg p-3 m-5 hover:text-orange-500 transition-all duration-200">Concluir</button>
             </div>
         </div>
     );

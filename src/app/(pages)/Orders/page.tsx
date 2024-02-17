@@ -49,10 +49,10 @@ export default function Orders() {
             
         </div> : 
         <div className="grid grid-cols-4 grid-rows-none place-content-center gap-10 m-10">
-            <Skeleton className="h-[270px] w-[250px] rounded-xl" />
-            <Skeleton className="h-[270px] w-[250px] rounded-xl" />
-            <Skeleton className="h-[270px] w-[250px] rounded-xl" />
-            <Skeleton className="h-[270px] w-[250px] rounded-xl" />
+            <Skeleton className="h-[270px] w-[170px] rounded-lg" />
+            <Skeleton className="h-[270px] w-[170px] rounded-lg" />
+            <Skeleton className="h-[270px] w-[170px] rounded-lg" />
+            <Skeleton className="h-[270px] w-[170px] rounded-lg" />
         </div>
         } 
     </main>
