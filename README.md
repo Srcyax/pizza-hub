@@ -2,7 +2,7 @@
 
 ## Bem-vindo ao Pizza Hub
 
-Pizza Hub é uma aplicação web desenvolvida utilizando Next.js, TailwindCSS e Next UI, proporcionando uma experiência moderna e responsiva para explorar e fazer pedidos de pizzas.
+Pizza Hub é uma aplicação web desenvolvida utilizando Next.js, TailwindCSS e ShadCN, proporcionando uma experiência moderna e responsiva para explorar e fazer pedidos de pizzas.
 
 ### Funcionalidades Principais
 
@@ -23,7 +23,7 @@ Pizza Hub é uma aplicação web desenvolvida utilizando Next.js, TailwindCSS e 
 
 - **Next.js**: Um framework React para construção de aplicativos web modernos.
 - **TailwindCSS**: Uma biblioteca de estilos utilitários para design flexível e semântico.
-- **Next UI**: Uma biblioteca de componentes para Next.js, oferecendo componentes prontos e estilizados.
+- **ShadCN**: Componentes lindamente projetados que você pode copiar e colar em seus aplicativos. Acessível. Customizável
 
 ## Autor
 
