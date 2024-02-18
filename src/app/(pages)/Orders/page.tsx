@@ -55,7 +55,7 @@ export default function Orders() {
             }
             
         </div> : 
-        <div className="grid grid-cols-4 grid-rows-none place-content-center gap-10 m-10">
+        <div className="grid grid-cols-4 max-[1300px]:grid-cols-3 max-[1024px]:grid-cols-2 max-[668px]:grid-cols-1 grid-rows-none place-content-center gap-10 m-10">
             <Skeleton className="h-[350px] w-[230px] rounded-lg" />
             <Skeleton className="h-[350px] w-[230px] rounded-lg" />
             <Skeleton className="h-[350px] w-[230px] rounded-lg" />
