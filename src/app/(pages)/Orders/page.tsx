@@ -1,6 +1,7 @@
 "use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { toast } from "sonner"
 import OrderCard from "./orderCard";
 import { Skeleton } from "@/components/ui/skeleton"
 
@@ -24,10 +25,25 @@ export default function Orders() {
 
     const handleOrderComplete = async (index: number, order: Order) => {
         try {
-            await axios.post('/api/remove-order', { name: order.name });
+            await axios.post('/api/remove-order', { name: order.name }).then(() => {
+                toast("Sucesso!", {
+                    description: "O pedido foi concluído, o Motoboy já foi notificado",
+                    action: {
+                      label: "Ok",
+                      onClick: () => console.log("Undo"),
+                    },
+                  })
+            });
             setOrders(prevOrders => prevOrders.filter((_, i) => i !== index));
         } catch (error) {
             console.error('Error removing order:', error);
+            toast("Erro!", {
+                description: "Erro ao remover o pedido",
+                action: {
+                  label: "Ok",
+                  onClick: () => console.log("Undo"),
+                },
+              })
         }
     };
 

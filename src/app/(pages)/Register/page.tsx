@@ -41,11 +41,11 @@ export default function Register(){
                     <CardContent className="space-y-2">
                         <div className="space-y-1">
                         <Label htmlFor="name">Nome</Label>
-                        <Input id="user" placeholder="Nome" />
+                        <Input id="user" autoComplete="off" placeholder="Nome" />
                         </div>
                         <div className="space-y-1">
                         <Label htmlFor="username">Endereço de entrega</Label>
-                        <Input id="address" placeholder="Endereço" />
+                        <Input id="address" autoComplete="off" placeholder="Endereço" />
                         </div>
                     </CardContent>
                     <CardFooter>
