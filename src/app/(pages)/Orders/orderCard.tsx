@@ -1,3 +1,7 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useState } from "react";
+
 interface Order {
     user: string;
     address: string;
@@ -9,21 +13,31 @@ interface OrderCardProps {
     user: string;
     address: string;
     name: string;
-    img: string;
+    pizzaImg: string;
     orders: Order[];
     index: number;
     onOrderComplete: (index: number, order: Order) => void;
 }
 
-export default function OrderCard({ user, address, name, img, orders, index, onOrderComplete }: OrderCardProps){
+export default function OrderCard({ user, address, name, pizzaImg, orders, index, onOrderComplete }: OrderCardProps){
+    const [isImageLoaded, setImageLoaded] = useState(false);
+
+    const handleSetImageLoaded = () => {
+      setImageLoaded(true);
+    }
+    
     const handleCompleteOrder = () => {
         const order = orders[index];
         onOrderComplete(index, order);
     };
+    
     return (
         <div>
             <div className="border-2 rounded-lg flex flex-col justify-center items-center">
-                <img className="m-5 rounded-xl h-36" src={"images/" + img} width={200} alt="" />
+                {
+                    !isImageLoaded ? <Skeleton className="rounded-xl w-[200px] h-[150px] m-5"/> : null
+                }
+                <LazyLoadImage className={isImageLoaded ? "m-5 rounded-xl h-36" : ""} beforeLoad={handleSetImageLoaded} src={"images/" + pizzaImg} width={200} alt="" />
                 <h1>{name}</h1>
                 <div className="flex flex-col gap-4 m-5 w-52">
                     <p className="text-center text-zinc-400">{"Cliente: " + user}</p>

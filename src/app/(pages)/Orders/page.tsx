@@ -35,7 +35,7 @@ export default function Orders() {
     <main className="flex flex-col items-center justify-between">
         <h1>Pedidos:</h1>
         {
-            ordersIsLoaded ? <div className="grid grid-cols-4 grid-rows-none place-content-center gap-10 m-10">
+            ordersIsLoaded ? <div className="grid grid-cols-4 max-[1300px]:grid-cols-3 max-[1024px]:grid-cols-2 max-[668px]:grid-cols-1 grid-rows-none place-content-center gap-10 m-10">
             {
                (orders.map((order, index) => 
                (
@@ -45,7 +45,7 @@ export default function Orders() {
                             address={order.address}
                             key={index}
                             name={order.name}
-                            img={order.pizzaImg}
+                            pizzaImg={order.pizzaImg}
                             orders={orders}
                             index={index}
                             onOrderComplete={handleOrderComplete}
