@@ -54,7 +54,7 @@ export default function OrderCard({
 
   return (
     <div>
-      <div className="border-2 rounded-lg flex flex-col justify-center items-center">
+      <div className="border-2 px-11 rounded-lg flex flex-col justify-center items-center">
         {!isImageLoaded ? (
           <Skeleton className="rounded-xl w-[200px] h-[150px] m-5" />
         ) : null}
