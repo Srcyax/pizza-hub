@@ -37,11 +37,12 @@ export default function Orders() {
         {
             ordersIsLoaded ? <div className="grid grid-cols-4 grid-rows-none place-content-center gap-10 m-10">
             {
-               (orders.map((order, index) => (
+               (orders.map((order, index) => 
+               (
                     <div key={index}>
                         <OrderCard
-                            user="Luiz Philipe"
-                            address="AV elson soares 1210 b"
+                            user={order.user}
+                            address={order.address}
                             key={index}
                             name={order.name}
                             img={order.pizzaImg}
@@ -55,10 +56,10 @@ export default function Orders() {
             
         </div> : 
         <div className="grid grid-cols-4 grid-rows-none place-content-center gap-10 m-10">
-            <Skeleton className="h-[270px] w-[170px] rounded-lg" />
-            <Skeleton className="h-[270px] w-[170px] rounded-lg" />
-            <Skeleton className="h-[270px] w-[170px] rounded-lg" />
-            <Skeleton className="h-[270px] w-[170px] rounded-lg" />
+            <Skeleton className="h-[350px] w-[230px] rounded-lg" />
+            <Skeleton className="h-[350px] w-[230px] rounded-lg" />
+            <Skeleton className="h-[350px] w-[230px] rounded-lg" />
+            <Skeleton className="h-[350px] w-[230px] rounded-lg" />
         </div>
         } 
     </main>

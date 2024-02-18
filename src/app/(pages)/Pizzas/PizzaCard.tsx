@@ -18,8 +18,11 @@ export default function PizzaCardInfo({user, address, pizzaImg, pizzaName, pizza
           <img className="m-5 rounded-xl h-36" src={"images/" + pizzaImg} width={200} alt="" />
           <h1 className="text-2xl">{pizzaName}</h1>
           <p className="text-center text-zinc-400 m-5">{pizzaDesc}</p>
-          <button onClick={() => {
+          <button onClick={() => 
+          {
               axios.post("/api/orders", {
+                user: user,
+                address: address,
                 name: pizzaName,
                 desc: pizzaDesc,
                 pizzaImg: pizzaImg

@@ -4,11 +4,16 @@ import { Instagram, Facebook, Twitter, ArrowRight   } from 'lucide-react'
 import { useTheme } from "next-themes"
 import { useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const { setTheme } = useTheme()
+  const router = useRouter()
 
   useEffect(() => {
+    if (localStorage.getItem("user") === null || localStorage.getItem("address") === null){
+      router.push("/Register");
+    }
     setTheme("dark")
   })
 
