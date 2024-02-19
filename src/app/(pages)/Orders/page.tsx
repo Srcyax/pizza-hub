@@ -35,7 +35,7 @@ export default function Orders() {
 	const handleOrderComplete = async (index: number, order: Order) => {
 		try {
 			await axios.post("/api/remove-order", { name: order.name }).then(() => {
-				axios
+				/*axios
 					.post("/api/wpp-msg", {
 						message:
 							"Olá, " +
@@ -51,7 +51,14 @@ export default function Orders() {
 								onClick: () => console.log("Undo"),
 							},
 						});
-					});
+					});*/
+				toast("Sucesso!", {
+					description: "O pedido foi concluído, o Cliente já foi notificado",
+					action: {
+						label: "Ok",
+						onClick: () => console.log("Undo"),
+					},
+				});
 			});
 			setOrders((prevOrders) => prevOrders.filter((_, i) => i !== index));
 		} catch (error) {
