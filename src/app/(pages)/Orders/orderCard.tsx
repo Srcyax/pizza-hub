@@ -70,7 +70,7 @@ export default function OrderCard({
 				<p className="text-center text-zinc-400">{"Cliente: " + user}</p>
 				<p className="text-center text-zinc-400">{"Endereço: " + address}</p>
 			</div>
-			<div className="flex gap-2 items-center m-5 h-36">
+			<div className="flex gap-2 justify-center items-center m-5 w-60 h-36 p-5 text-center break-words">
 				<div className="flex flex-col items-center">
 					<p className="text-[13px]">
 						{pizzaInfo.additionals !== "" ? (
@@ -100,7 +100,7 @@ export default function OrderCard({
 					<p className="text-[13px]">
 						{pizzaInfo.observation !== "" ? (
 							<div>
-								<strong className="text-center">Observações:</strong>{" "}
+								<strong className="text-center">Observações: </strong>
 								{pizzaInfo.observation}
 							</div>
 						) : null}
