@@ -1,2 +1,3 @@
-2024/02/18-23:38:52.033 47ac Creating DB C:\Users\cya\Documents\GitHub\pizza-hub\.wwebjs_auth\session-PizzaHub\Default\File System\Origins since it was missing.
-2024/02/18-23:38:52.039 47ac Reusing MANIFEST C:\Users\cya\Documents\GitHub\pizza-hub\.wwebjs_auth\session-PizzaHub\Default\File System\Origins/MANIFEST-000001
+2024/02/18-23:51:50.679 1528 Reusing MANIFEST C:\Users\cya\Documents\GitHub\pizza-hub\.wwebjs_auth\session-PizzaHub\Default\File System\Origins/MANIFEST-000001
+2024/02/18-23:51:50.680 1528 Recovering log #3
+2024/02/18-23:51:50.680 1528 Reusing old log C:\Users\cya\Documents\GitHub\pizza-hub\.wwebjs_auth\session-PizzaHub\Default\File System\Origins/000003.log 

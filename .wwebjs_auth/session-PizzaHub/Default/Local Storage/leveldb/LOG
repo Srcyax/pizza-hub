@@ -1,2 +1,3 @@
-2024/02/18-23:38:50.002 3cd0 Creating DB C:\Users\cya\Documents\GitHub\pizza-hub\.wwebjs_auth\session-PizzaHub\Default\Local Storage\leveldb since it was missing.
-2024/02/18-23:38:50.008 3cd0 Reusing MANIFEST C:\Users\cya\Documents\GitHub\pizza-hub\.wwebjs_auth\session-PizzaHub\Default\Local Storage\leveldb/MANIFEST-000001
+2024/02/18-23:51:49.375 3d10 Reusing MANIFEST C:\Users\cya\Documents\GitHub\pizza-hub\.wwebjs_auth\session-PizzaHub\Default\Local Storage\leveldb/MANIFEST-000001
+2024/02/18-23:51:49.376 3d10 Recovering log #3
+2024/02/18-23:51:49.377 3d10 Reusing old log C:\Users\cya\Documents\GitHub\pizza-hub\.wwebjs_auth\session-PizzaHub\Default\Local Storage\leveldb/000003.log 
