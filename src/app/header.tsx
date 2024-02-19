@@ -13,9 +13,6 @@ export default function Header() {
 				</h1>
 			</Link>
 			<div className="flex flex-row gap-5 items-center">
-				<Link href="/Register">
-					<h1 className="hover:text-orange-400 transition-all">Infromações</h1>
-				</Link>
 				<Link href="/Pizzas">
 					<h1 className="hover:text-orange-400 transition-all">Pizzas</h1>
 				</Link>
