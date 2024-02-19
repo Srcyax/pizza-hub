@@ -172,6 +172,7 @@ export default function PizzaCardInfo({
 									Deixe sua observação
 								</label>
 								<Textarea
+									maxLength={60}
 									onChange={(e) => setObservation(e.target.value)}
 									placeholder="Observações sobre o pedido."
 									id="message"
@@ -199,8 +200,8 @@ export default function PizzaCardInfo({
 										</PopoverTrigger>
 										<PopoverContent className="w-[200px] p-0">
 											<Command>
-												<CommandInput placeholder="Search framework..." />
-												<CommandEmpty>No framework found.</CommandEmpty>
+												<CommandInput placeholder="Buscar..." />
+												<CommandEmpty>Opção não encontrada.</CommandEmpty>
 												<CommandGroup>
 													{delivery.map((delivery) => (
 														<CommandItem
@@ -251,8 +252,8 @@ export default function PizzaCardInfo({
 										</PopoverTrigger>
 										<PopoverContent className="w-[200px] p-0">
 											<Command>
-												<CommandInput placeholder="Search framework..." />
-												<CommandEmpty>No framework found.</CommandEmpty>
+												<CommandInput placeholder="Buscar..." />
+												<CommandEmpty>Opção não encontrada.</CommandEmpty>
 												<CommandGroup>
 													{payments.map((payments) => (
 														<CommandItem
