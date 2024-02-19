@@ -74,34 +74,36 @@ export default function Orders() {
 	};
 
 	return (
-		<main className="flex flex-col items-center justify-between">
-			<h1>Pedidos:</h1>
-			{ordersIsLoaded ? (
-				<div className="grid grid-cols-4 max-[1300px]:grid-cols-3 max-[1024px]:grid-cols-2 max-[668px]:grid-cols-1 grid-rows-none place-content-center gap-10 m-10">
-					{orders.map((order, index) => (
-						<div key={index}>
-							<OrderCard
-								user={order.user}
-								address={order.address}
-								number={order.number}
-								name={order.name}
-								pizzaInfo={order.pizzaInfo}
-								pizzaImg={order.pizzaImg}
-								orders={orders}
-								index={index}
-								onOrderComplete={handleOrderComplete}
-							/>
-						</div>
-					))}
-				</div>
-			) : (
-				<div className="grid grid-cols-4 max-[1300px]:grid-cols-3 max-[1024px]:grid-cols-2 max-[668px]:grid-cols-1 grid-rows-none place-content-center gap-10 m-10">
-					<Skeleton className="h-[350px] w-[230px] rounded-lg" />
-					<Skeleton className="h-[350px] w-[230px] rounded-lg" />
-					<Skeleton className="h-[350px] w-[230px] rounded-lg" />
-					<Skeleton className="h-[350px] w-[230px] rounded-lg" />
-				</div>
-			)}
+		<main>
+			<div className="flex flex-col items-center">
+				<h1>Pedidos:</h1>
+				{ordersIsLoaded ? (
+					<div className="grid grid-cols-4 max-[1300px]:grid-cols-3 max-[1024px]:grid-cols-2 max-[668px]:grid-cols-1 grid-rows-none place-content-center gap-10 m-10">
+						{orders.map((order, index) => (
+							<div className="" key={index}>
+								<OrderCard
+									user={order.user}
+									address={order.address}
+									number={order.number}
+									name={order.name}
+									pizzaInfo={order.pizzaInfo}
+									pizzaImg={order.pizzaImg}
+									orders={orders}
+									index={index}
+									onOrderComplete={handleOrderComplete}
+								/>
+							</div>
+						))}
+					</div>
+				) : (
+					<div className="grid grid-cols-4 max-[1300px]:grid-cols-3 max-[1024px]:grid-cols-2 max-[668px]:grid-cols-1 grid-rows-none place-content-center gap-10 m-10">
+						<Skeleton className="h-[350px] w-[230px] rounded-lg" />
+						<Skeleton className="h-[350px] w-[230px] rounded-lg" />
+						<Skeleton className="h-[350px] w-[230px] rounded-lg" />
+						<Skeleton className="h-[350px] w-[230px] rounded-lg" />
+					</div>
+				)}
+			</div>
 		</main>
 	);
 }

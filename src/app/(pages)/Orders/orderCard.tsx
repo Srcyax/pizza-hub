@@ -1,5 +1,6 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 
 interface PizzaInformation {
@@ -53,48 +54,66 @@ export default function OrderCard({
 	};
 
 	return (
-		<div>
-			<div className="border-2 rounded-lg flex flex-col justify-center items-center">
-				{!isImageLoaded ? (
-					<Skeleton className="rounded-xl w-[200px] h-[150px] m-5" />
-				) : null}
-				<LazyLoadImage
-					className={isImageLoaded ? "m-5 rounded-xl h-36" : ""}
-					beforeLoad={handleSetImageLoaded}
-					src={"images/" + pizzaImg}
-					width={200}
-					alt=""
-				/>
-				<h1>{name}</h1>
-				<div className="flex flex-col gap-2 items-center m-5">
-					<h1>Informações da Pizza</h1>
-					<div className="flex flex-col items-center">
-						<p className="text-[13px]">
-							<strong>Adicionais:</strong> {pizzaInfo.additionals}
-						</p>
-						<p className="text-[13px]">
-							<strong>Método de entrega:</strong> {pizzaInfo.delivery_method}
-						</p>
-						<p className="text-[13px]">
-							<strong>Método de pagamento:</strong> {pizzaInfo.payment_method}
-						</p>
-						<p className="text-[13px]">
-							<strong>Observações:</strong> {pizzaInfo.observation}
-						</p>
-					</div>
-				</div>
-
-				<div className="flex flex-col gap-4 m-5 w-52">
-					<p className="text-center text-zinc-400">{"Cliente: " + user}</p>
-					<p className="text-center text-zinc-400">{"Endereço: " + address}</p>
-				</div>
-				<button
-					onClick={handleCompleteOrder}
-					className="border-2 rounded-lg p-3 m-5 hover:text-orange-500 transition-all duration-200"
-				>
-					Concluir
-				</button>
+		<div className="border-2 rounded-lg flex flex-col items-center w-60">
+			{!isImageLoaded ? (
+				<Skeleton className="rounded-xl w-[200px] h-[150px] m-5" />
+			) : null}
+			<LazyLoadImage
+				className={isImageLoaded ? "m-5 rounded-xl h-36" : ""}
+				beforeLoad={handleSetImageLoaded}
+				src={"images/" + pizzaImg}
+				width={200}
+				alt=""
+			/>
+			<h1>{name}</h1>
+			<div className="flex flex-col m-5 w-52">
+				<p className="text-center text-zinc-400">{"Cliente: " + user}</p>
+				<p className="text-center text-zinc-400">{"Endereço: " + address}</p>
 			</div>
+			<div className="flex gap-2 items-center m-5 h-36">
+				<div className="flex flex-col items-center">
+					<p className="text-[13px]">
+						{pizzaInfo.additionals !== "" ? (
+							<div>
+								<strong>Adicionais:</strong> {pizzaInfo.additionals}
+							</div>
+						) : null}
+						<Separator className="my-2" />
+					</p>
+					<p className="text-[13px]">
+						{pizzaInfo.delivery_method !== "" ? (
+							<div>
+								<strong>Método de entrega:</strong> {pizzaInfo.delivery_method}
+							</div>
+						) : null}
+						<Separator className="my-2" />
+					</p>
+					<p className="text-[13px]">
+						{pizzaInfo.payment_method !== "" ? (
+							<div>
+								<strong>Método de pagamento:</strong> {pizzaInfo.payment_method}
+							</div>
+						) : null}
+						<Separator className="my-2" />
+					</p>
+
+					<p className="text-[13px]">
+						{pizzaInfo.observation !== "" ? (
+							<div>
+								<strong className="text-center">Observações:</strong>{" "}
+								{pizzaInfo.observation}
+							</div>
+						) : null}
+						<Separator className="my-2" />
+					</p>
+				</div>
+			</div>
+			<button
+				onClick={handleCompleteOrder}
+				className="border-2 rounded-lg p-3 m-5 hover:text-orange-500 transition-all duration-200"
+			>
+				Concluir
+			</button>
 		</div>
 	);
 }
