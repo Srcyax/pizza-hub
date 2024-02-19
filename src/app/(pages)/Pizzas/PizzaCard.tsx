@@ -137,7 +137,7 @@ export default function PizzaCardInfo({
 				<AlertDialogTrigger className="border-2 rounded-lg p-3 m-5 hover:text-orange-500 transition-all duration-200">
 					Pedir
 				</AlertDialogTrigger>
-				<AlertDialogContent className="">
+				<AlertDialogContent>
 					<AlertDialogHeader>
 						<AlertDialogTitle>{"Olá, " + user}</AlertDialogTitle>
 						<div className="flex flex-row max-[450px]:flex-col justify-between items-center max-[450px]:mx-11">
@@ -167,7 +167,7 @@ export default function PizzaCardInfo({
 									</label>
 								</div>
 							</div>
-							<div className="flex flex-col my-3">
+							<div className="flex flex-col my-3 max-[450px]:mx-8">
 								<label htmlFor="" className="my-1 text-[14px]">
 									Deixe sua observação
 								</label>
@@ -177,7 +177,7 @@ export default function PizzaCardInfo({
 									id="message"
 								/>
 							</div>
-							<div className="flex flex-row gap-5">
+							<div className="flex flex-row max-[450px]:flex-col justify-center items-center gap-5 my-3">
 								<div className="flex flex-col">
 									<label className="my-1 text-[14px]" htmlFor="">
 										Entrega ou retirada
