@@ -8,6 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 interface Order {
 	user: string;
 	address: string;
+	number: string;
 	name: string;
 	pizzaInfo: PizzaInformation;
 	pizzaImg: string;
@@ -35,12 +36,12 @@ export default function Orders() {
 		try {
 			await axios.post("/api/remove-order", { name: order.name }).then(() => {
 				axios
-					.post("http://localhost:3001/enviar-mensagem", {
+					.post("/api/wpp-msg", {
 						message:
 							"Olá, " +
 							order.user +
 							". Seu pedido ja saiu para rota de entrega, bom apetite 😋🍕!",
-						number: "554391668381",
+						number: order.number,
 					})
 					.then(() => {
 						toast("Sucesso!", {
@@ -75,6 +76,7 @@ export default function Orders() {
 							<OrderCard
 								user={order.user}
 								address={order.address}
+								number={order.number}
 								name={order.name}
 								pizzaInfo={order.pizzaInfo}
 								pizzaImg={order.pizzaImg}

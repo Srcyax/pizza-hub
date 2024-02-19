@@ -12,6 +12,7 @@ interface PizzaInformation {
 interface Order {
 	user: string;
 	address: string;
+	number: string;
 	name: string;
 	pizzaInfo: PizzaInformation;
 	pizzaImg: string;
@@ -19,6 +20,7 @@ interface Order {
 
 interface OrderCardProps {
 	user: string;
+	number: string;
 	address: string;
 	name: string;
 	pizzaInfo: PizzaInformation;
@@ -31,6 +33,7 @@ interface OrderCardProps {
 export default function OrderCard({
 	user,
 	address,
+	number,
 	name,
 	pizzaInfo,
 	pizzaImg,

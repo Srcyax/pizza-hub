@@ -1,44 +1,38 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const { Client } = require("whatsapp-web.js");
-const qrcode = require("qrcode-terminal");
+import { Client } from "whatsapp-web.js";
+import qrcode from "qrcode-terminal";
 
-const app = express();
-const port = 3001;
+let client;
 
-// Configuração do body-parser para lidar com JSON
-app.use(bodyParser.json());
-app.use(cors());
+async function initializeClient() {
+	if (!client) {
+		client = new Client({});
 
-// Instanciando o cliente WhatsApp
-const client = new Client();
+		client.on("qr", (qr) => {
+			console.log("QR code");
+			qrcode.generate(qr, { small: true });
+		});
 
-client.on("qr", (qr) => {
-	console.log("QR code recebido");
-	qrcode.generate(qr, { small: true });
-});
+		client.on("ready", () => {
+			console.log("Client is ready");
+		});
 
-client.on("ready", () => {
-	console.log("Cliente está pronto!");
-});
-
-client.initialize();
-
-// Rota para enviar mensagens
-app.post("/enviar-mensagem", async (req, res) => {
-	try {
-		const { number, message } = req.body;
-		const chat = await client.getChatById(`${number}@c.us`);
-		await chat.sendMessage(message);
-		res.status(200).json({ message: "Mensagem enviada com sucesso" });
-	} catch (error) {
-		console.error("Erro ao enviar mensagem:", error);
-		res.status(500).json({ message: "Erro ao enviar mensagem" });
+		await client.initialize();
 	}
-});
+}
 
-// Iniciando o servidor
-app.listen(port, () => {
-	console.log(`Servidor rodando em http://localhost:${port}`);
-});
+export default async function handler(req, res) {
+	if (req.method === "POST") {
+		try {
+			await initializeClient();
+			const { number, message } = req.body;
+			const chat = await client.getChatById(`${number}@c.us`);
+			await chat.sendMessage(message);
+			res.status(200).json({ message: "Message sent successfully" });
+		} catch (error) {
+			console.error("Error sending message: ", error);
+			res.status(500).json({ message: "Error sending message" });
+		}
+	} else {
+		res.status(405).json({ message: "Method not allowed" });
+	}
+}

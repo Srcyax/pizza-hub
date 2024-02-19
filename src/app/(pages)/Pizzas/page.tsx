@@ -8,17 +8,20 @@ export default function Pizzas() {
 
 	const [user, setUser] = useState<string>("");
 	const [address, setAddress] = useState<string>("");
+	const [number, setNumber] = useState<string>("");
 
 	useEffect(() => {
 		if (
 			localStorage.getItem("user") === null ||
-			localStorage.getItem("address") === null
+			localStorage.getItem("address") === null ||
+			localStorage.getItem("number") === null
 		) {
 			router.push("/Register");
 		}
 
 		setUser(localStorage.getItem("user") ?? "");
 		setAddress(localStorage.getItem("address") ?? "");
+		setNumber(localStorage.getItem("number") ?? "");
 	}, []);
 
 	return (
@@ -27,6 +30,7 @@ export default function Pizzas() {
 				<PizzaCardInfo
 					user={user}
 					address={address}
+					number={number}
 					pizzaImg="calabresa.png"
 					pizzaName="Calabresa"
 					pizzaDesc="Experimente nossa pizza de calabresa: uma combinação irresistível 
@@ -36,6 +40,7 @@ export default function Pizzas() {
 				<PizzaCardInfo
 					user={user}
 					address={address}
+					number={number}
 					pizzaImg="bacon.png"
 					pizzaName="Bacon"
 					pizzaDesc="Experimente nossa pizza de calabresa: uma combinação irresistível 

@@ -21,7 +21,8 @@ export default function Home() {
 	useEffect(() => {
 		if (
 			localStorage.getItem("user") === null ||
-			localStorage.getItem("address") === null
+			localStorage.getItem("address") === null ||
+			localStorage.getItem("number") === null
 		) {
 			router.push("/Register");
 		}

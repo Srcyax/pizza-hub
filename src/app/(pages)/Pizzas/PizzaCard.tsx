@@ -70,6 +70,7 @@ const delivery = [
 interface CardInfo {
 	user: string;
 	address: string;
+	number: string;
 	pizzaImg: string;
 	pizzaName: string;
 	pizzaDesc: string;
@@ -85,6 +86,7 @@ interface PizzaInformation {
 export default function PizzaCardInfo({
 	user,
 	address,
+	number,
 	pizzaImg,
 	pizzaName,
 	pizzaDesc,
@@ -319,6 +321,7 @@ export default function PizzaCardInfo({
 									.post("/api/orders", {
 										user: user,
 										address: address,
+										number: number,
 										name: pizzaName,
 										desc: pizzaDesc,
 										pizzaInfo: pizzaInfo,
