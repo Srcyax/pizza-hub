@@ -34,13 +34,23 @@ export default function Orders() {
 	const handleOrderComplete = async (index: number, order: Order) => {
 		try {
 			await axios.post("/api/remove-order", { name: order.name }).then(() => {
-				toast("Sucesso!", {
-					description: "O pedido foi concluído, o Cliente já foi notificado",
-					action: {
-						label: "Ok",
-						onClick: () => console.log("Undo"),
-					},
-				});
+				axios
+					.post("http://localhost:3001/enviar-mensagem", {
+						message:
+							"Olá, " +
+							order.user +
+							". Seu pedido ja saiu para rota de entrega, bom apetite 😋🍕!",
+						number: "554391668381",
+					})
+					.then(() => {
+						toast("Sucesso!", {
+							description: "O pedido foi concluído, o Cliente já foi notificado",
+							action: {
+								label: "Ok",
+								onClick: () => console.log("Undo"),
+							},
+						});
+					});
 			});
 			setOrders((prevOrders) => prevOrders.filter((_, i) => i !== index));
 		} catch (error) {
