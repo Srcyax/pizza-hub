@@ -43,9 +43,19 @@ export default function Pizzas() {
 					number={number}
 					pizzaImg="bacon.png"
 					pizzaName="Bacon"
-					pizzaDesc="Experimente nossa pizza de calabresa: uma combinação irresistível 
-                de queijo derretido, molho de tomate caseiro e calabresa defumada, 
-                perfeita para satisfazer seus desejos de pizza clássica e saborosa"
+					pizzaDesc="Deliciosa e irresistível, nossa pizza de bacon combina 
+					o sabor defumado do bacon com queijo derretido sobre 
+					uma base de molho de tomate caseiro. Uma explosão de sabores em cada mordida!"
+				/>
+				<PizzaCardInfo
+					user={user}
+					address={address}
+					number={number}
+					pizzaImg="portuguesa.png"
+					pizzaName="Portuguesa"
+					pizzaDesc="Nossa pizza portuguesa combina presunto, queijo, 
+					azeitonas, cebola e pimentão sobre uma base de molho de tomate. 
+					Uma explosão de sabores autênticos em cada pedaço!"
 				/>
 			</div>
 		</main>
