@@ -41,13 +41,13 @@ export default function Home() {
 						hoje e descubra por que somos os favoritos da cidade!
 					</p>
 					<div className="grid grid-cols-3 gap-3 m-5">
-						<a href="" target="_blank">
+						<a href="https://www.instagram.com/pizza-hub/" target="_blank">
 							<Instagram className="hover:text-orange-500 transition-colors" />
 						</a>
-						<a href="" target="_blanck">
+						<a href="https://www.facebook.com/pizzahub" target="_blanck">
 							<Facebook className="hover:text-orange-500 transition-colors" />
 						</a>
-						<a href="" target="_black">
+						<a href="https://twitter.com/pizza-hub" target="_black">
 							<Twitter className="hover:text-orange-500 transition-colors" />
 						</a>
 					</div>
