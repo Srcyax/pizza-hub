@@ -59,6 +59,10 @@ export default function Orders() {
 						onClick: () => console.log("Undo"),
 					},
 				});
+
+				setTimeout(() => {
+					location.reload();
+				}, 500);
 			});
 			setOrders((prevOrders) => prevOrders.filter((_, i) => i !== index));
 		} catch (error) {
@@ -70,6 +74,10 @@ export default function Orders() {
 					onClick: () => console.log("Undo"),
 				},
 			});
+
+			setTimeout(() => {
+				location.reload();
+			}, 500);
 		}
 	};
 
