@@ -76,7 +76,12 @@ export default function Orders() {
 	return (
 		<main>
 			<div className="flex flex-col items-center">
-				<h1>Pedidos:</h1>
+				{orders.length !== 0 ? (
+					<h1>Pedidos:</h1>
+				) : (
+					<h1>Nenhum pedido encontrado</h1>
+				)}
+
 				{ordersIsLoaded ? (
 					<div className="grid grid-cols-4 max-[1300px]:grid-cols-3 max-[1024px]:grid-cols-2 max-[668px]:grid-cols-1 grid-rows-none place-content-center gap-10 m-10">
 						{orders.map((order, index) => (
