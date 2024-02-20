@@ -64,6 +64,7 @@ export default function Home() {
 					<Skeleton className="h-[400px] max-[768px]:h-[200px] w-[400px] max-[768px]:w-[200px] rounded-full m-14" />
 				) : null}
 				<LazyLoadImage
+					className="mb-24 max-[430px]:w-[800px]"
 					beforeLoad={handleSetImageLoaded}
 					src="images/pizza.png"
 					alt="pizza_image"
